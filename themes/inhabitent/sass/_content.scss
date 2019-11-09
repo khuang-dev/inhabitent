@@ -2,6 +2,34 @@
 # Content
 --------------------------------------------------------------*/
 
+.entry-header {
+	display: block;
+	position: relative;
+		.entry-title {
+		position: absolute;
+		background: #248a83;
+		left: 0;
+		top: 50px;
+		padding: 0.25rem 1.5rem;
+		a{
+			display: inline-block;
+			text-decoration: none;
+			color: $color__text-journal-title;
+			font-family: 'Novecento Sans Web';
+			font-size: 2.1rem;
+			max-width: 450px;
+		}
+		}
+		.entry-meta {
+		position: absolute;
+		background: #248a83;
+		color: $color__text-journal-title;
+		bottom: 7px;
+		right: 480px;
+		font-family: 'Novecento Sans Web';
+		
+	}
+}
 /* Posts and pages */
 
 .sticky {
