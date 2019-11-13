@@ -1,35 +1,57 @@
-/*--------------------------------------------------------------
-# Content
---------------------------------------------------------------*/
-
-.entry-header {
-	display: block;
-	position: relative;
-		.entry-title {
-		position: absolute;
-		background: #248a83;
-		left: 0;
-		top: 50px;
-		padding: 0.25rem 1.5rem;
-		a{
-			display: inline-block;
-			text-decoration: none;
-			color: $color__text-journal-title;
-			font-family: 'Novecento Sans Web';
-			font-size: 2.1rem;
-			max-width: 450px;
-		}
-		}
-		.entry-meta {
-		position: absolute;
-		background: #248a83;
-		color: $color__text-journal-title;
-		bottom: 7px;
-		right: 480px;
-		font-family: 'Novecento Sans Web';
-		
-	}
+// /*--------------------------------------------------------------
+// # Content
+// --------------------------------------------------------------*/
+.site-header {
+	border: 2px black solid;
 }
+.header-container {
+	display: flex;
+	justify-content: space-between;
+}
+.green-header-logo {
+	width: 50px;
+	height: 33px;
+}
+
+
+// .entry-header {
+// 	display: block;
+// 	position: relative;
+// 		.entry-title {
+// 		position: absolute;
+// 		background: #248a83;
+// 		left: 0;
+// 		top: 50px;
+// 		padding: 0.25rem 1.5rem;
+// 		a{
+// 			display: inline-block;
+// 			text-decoration: none;
+// 			color: $color__text-journal-title;
+// 			font-family: 'Novecento Sans Web';
+// 			font-size: 2.1rem;
+// 			max-width: 450px;
+// 		}
+// 		}
+// 		.entry-meta {
+// 		position: absolute;
+// 		background: #248a83;
+// 		color: $color__text-journal-title;
+// 		bottom: 7px;
+// 		right: 480px;
+// 		font-family: 'Novecento Sans Web';
+		
+// 	}
+// }
+
+.site-content {
+	display: flex;
+	flex-direction: row;
+	width: 100%;
+}
+.content-area {
+	flex-basis: 75%;
+}
+
 /* Posts and pages */
 
 .sticky {
@@ -74,4 +96,30 @@
 }
 .bypostauthor {
 	display: block;
+}
+
+/* Footer */
+.site-info {
+	background-color: black;
+	background-image: url("../../project-04/images/dark-wood@2x.png");
+	background-size: 512px 512px;
+	display: flex;
+	flex-wrap: wrap;
+	width: 100%;
+	justify-content: space-around;
+	p {
+		color: $color__footer-text;
+	}
+}
+.footer-title {
+	font-family: 'Novecento Sans Web', sans-serif;
+	color: $color__footer-title;
+	text-transform: uppercase;
+}
+.copyright {
+	font-family: 'Novecento Sans Web', sans-serif;
+	color: $color__text-journal-title;
+	width: 100%;
+	text-align: center;
+	text-transform: uppercase;
 }

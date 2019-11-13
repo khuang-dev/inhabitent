@@ -5,7 +5,7 @@
 html {
   box-sizing: border-box;
   @include font-size(1);
-  width: 1120px;
+  // width: 1120px;
   // line-height: 1.75;
 }
 
@@ -73,4 +73,8 @@ img {
 table {
   margin: 0 0 $base__space-unit;
   width: 100%;
+}
+
+footer {
+  // background-image: url('../../inhabitent/project-04/images/dark-wood@2x.png');
 }

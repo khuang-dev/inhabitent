@@ -332,8 +332,7 @@ html {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   font-size: 16px;
-  font-size: 1rem;
-  width: 1120px; }
+  font-size: 1rem; }
 
 *,
 *:before,
@@ -478,8 +477,7 @@ a {
 .main-navigation {
   clear: both;
   display: block;
-  float: left;
-  width: 100%; }
+  float: left; }
   .main-navigation ul {
     display: none;
     list-style: none;
@@ -612,32 +610,34 @@ a {
 .widget_search .search-submit {
   display: none; }
 
-/*--------------------------------------------------------------
-# Content
---------------------------------------------------------------*/
-.entry-header {
-  display: block;
-  position: relative; }
-  .entry-header .entry-title {
-    position: absolute;
-    background: #248a83;
-    left: 0;
-    top: 50px;
-    padding: 0.25rem 1.5rem; }
-    .entry-header .entry-title a {
-      display: inline-block;
-      text-decoration: none;
-      color: #fff;
-      font-family: 'Novecento Sans Web';
-      font-size: 2.1rem;
-      max-width: 450px; }
-  .entry-header .entry-meta {
-    position: absolute;
-    background: #248a83;
-    color: #fff;
-    bottom: 7px;
-    right: 480px;
-    font-family: 'Novecento Sans Web'; }
+.site-header {
+  border: 2px black solid; }
+
+.header-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between; }
+
+.green-header-logo {
+  width: 50px;
+  height: 33px; }
+
+.site-content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  width: 100%; }
+
+.content-area {
+  -ms-flex-preferred-size: 75%;
+      flex-basis: 75%; }
 
 /* Posts and pages */
 .sticky {
@@ -673,6 +673,34 @@ a {
 
 .bypostauthor {
   display: block; }
+
+/* Footer */
+.site-info {
+  background-color: black;
+  background-image: url("../../project-04/images/dark-wood@2x.png");
+  background-size: 512px 512px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  width: 100%;
+  -ms-flex-pack: distribute;
+      justify-content: space-around; }
+  .site-info p {
+    color: #fff; }
+
+.footer-title {
+  font-family: 'Novecento Sans Web', sans-serif;
+  color: #d99054;
+  text-transform: uppercase; }
+
+.copyright {
+  font-family: 'Novecento Sans Web', sans-serif;
+  color: #fff;
+  width: 100%;
+  text-align: center;
+  text-transform: uppercase; }
 
 /*--------------------------------------------------------------
 # Media
