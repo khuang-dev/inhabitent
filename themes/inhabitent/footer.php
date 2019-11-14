@@ -17,12 +17,12 @@
 					</div>
 					<div class="business-hours">
 						<h4 class="footer-title">business hours</h4>
-						<p>Monday-Friday: 9am to 5pm</p>
-						<p>Saturday: 10am to 2pm</p>
-						<p>Sunday: Closed</p>
+						<p><b>Monday-Friday:</b> 9am to 5pm</p>
+						<p><b>Saturday:</b> 10am to 2pm</p>
+						<p><b>Sunday:</b> Closed</p>
 					</div>
 					<div class="footer-logo">
-						<img src="wp-content/themes/inhabitent/project-04/images/logos/inhabitent-logo-text-dark.svg" alt="footer-logo">
+						<img class="footer-logo" src="<?php echo get_template_directory_uri(); ?>/assets/images/logos/inhabitent-logo-text.svg" alt="footer-logo">
 					</div>
 					<div class="copyright">copyright © 2019 inhabitent</div>
 				</div><!-- .site-info -->

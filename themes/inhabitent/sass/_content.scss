@@ -2,18 +2,72 @@
 // # Content
 // --------------------------------------------------------------*/
 .site-header {
-	border: 2px black solid;
+  position: relative;
+  z-index: 99;
 }
 .header-container {
-	display: flex;
-	justify-content: space-between;
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+  width: 100%;
+  // background-color: rgba(255, 255, 255, 0.3);
 }
 .green-header-logo {
-	width: 50px;
-	height: 33px;
+  width: 50px;
+  height: 33px;
+  position: absolute;
+}
+.white-header-logo {
+  width: 50px;
+  height: 33px;
+  display:none;
 }
 
+.banner-image {
+  height: 100vh;
+  width: 100vw;
+  position: relative;
+  img {
+    // object-fit: cover;
+    // object-position: center top;
+    // width: 100%;
+	// height: 100%;
+	
+    // background-size: cover;
+    // overflow: hidden;
+    // background-color: linear-gradient(
+    //     180deg,
+    //     rgba(0, 0, 0, 0.4) 0,
+    //     rgba(0, 0, 0, 0.4)
+    //   ),
+    //   #969696;
+  }
+}
+.journal-section {
 
+}
+.journal-container {
+  display: inline-block;
+  width: 360px;
+  height: 415px;
+  align-items: top;
+  border: gray 1px solid;
+}
+.journal-image {
+	width: 360px;
+	height: 250px;
+	overflow: hidden;
+}
+.fp-journal-title {
+}
+.read-entry {
+	a {
+		text-decoration: none;
+		color: black;
+		border: 1px gray solid;
+		padding: 8px 25px;
+	}
+}
 // .entry-header {
 // 	display: block;
 // 	position: relative;
@@ -39,87 +93,110 @@
 // 		bottom: 7px;
 // 		right: 480px;
 // 		font-family: 'Novecento Sans Web';
-		
+
 // 	}
 // }
 
 .site-content {
-	display: flex;
-	flex-direction: row;
-	width: 100%;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
 }
 .content-area {
-	flex-basis: 75%;
+  align-items: center;
+  text-align: center;
+}
+.widget-area {
+  flex-basis: 25%;
 }
 
 /* Posts and pages */
 
 .sticky {
-	display: block;
+  display: block;
 }
 
 .hentry {
-	margin: 0 0 $base__space-unit;
+  margin: 0 0 $base__space-unit;
 }
 
-.updated:not(.published){
-	display: none;
+.updated:not(.published) {
+  display: none;
 }
 
 .single .byline,
 .group-blog .byline {
-	display: inline;
+  display: inline;
 }
 
 .page-content,
 .entry-content,
 .entry-summary {
-	margin: $base__space-unit 0 0;
+  margin: $base__space-unit 0 0;
 }
 
 .page-links {
-	clear: both;
-	margin: 0 0 $base__space-unit;
+  clear: both;
+  margin: 0 0 $base__space-unit;
 }
 
 /* Asides */
 
 .blog .format-aside .entry-title,
 .archive .format-aside .entry-title {
-	display: none;
+  display: none;
 }
 
 /* Comments */
 
 .comment-content a {
-	word-wrap: break-word;
+  word-wrap: break-word;
 }
 .bypostauthor {
-	display: block;
+  display: block;
 }
 
 /* Footer */
 .site-info {
-	background-color: black;
-	background-image: url("../../project-04/images/dark-wood@2x.png");
-	background-size: 512px 512px;
-	display: flex;
-	flex-wrap: wrap;
-	width: 100%;
-	justify-content: space-around;
-	p {
-		color: $color__footer-text;
-	}
+  background-color: black;
+  background-image: url('../../assets/images/dark-wood@2x.png');
+  background-size: 512px 512px;
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  height: 355px;
+  justify-content: space-around;
+  p {
+    color: $color__footer-text;
+  }
 }
 .footer-title {
-	font-family: 'Novecento Sans Web', sans-serif;
-	color: $color__footer-title;
-	text-transform: uppercase;
+  font-family: 'Novecento Sans Web', sans-serif;
+  color: $color__footer-title;
+  text-transform: uppercase;
+  font-size: 1.2rem;
+  line-height: 1.15;
+}
+.footer-logo {
+  width: 320px;
+  padding-top: 30px;
+  padding-right: 20px;
+}
+.contact-info {
+  line-height: 1.15;
+  padding-top: 50px;
+  padding-left: 25px;
+}
+.business-hours {
+  line-height: 1.15;
+  padding-top: 50px;
+  padding-right: 250px;
 }
 .copyright {
-	font-family: 'Novecento Sans Web', sans-serif;
-	color: $color__text-journal-title;
-	width: 100%;
-	text-align: center;
-	text-transform: uppercase;
+  font-family: 'Novecento Sans Web', sans-serif;
+  color: $color__text-journal-title;
+  width: 100%;
+  text-align: center;
+  text-transform: uppercase;
+  padding-top: 40px;
 }

@@ -4,9 +4,9 @@
 
 /* Links */
 
+
 a {
 	color: $color__link;
-
 	&:visited {
 		color: $color__link-visited;
 	}
@@ -59,6 +59,7 @@ a {
 
 			a {
 				width: 200px;
+
 			}
 
 			:hover > a,
@@ -86,6 +87,9 @@ a {
 	a {
 		display: block;
 		text-decoration: none;
+		color: white;
+		font-family: 'Novecento Sans Web', sans-serif;
+		text-transform: uppercase;
 	}
 
 	.current_page_item > a,
