@@ -43,6 +43,53 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 # Page Templates
 	## Front page
 --------------------------------------------------------------*/
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
 html {
   font-family: sans-serif;
   -webkit-text-size-adjust: 100%;
@@ -332,7 +379,8 @@ html {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   font-size: 16px;
-  font-size: 1rem; }
+  font-size: 1rem;
+  font-size: 16px; }
 
 *,
 *:before,
@@ -430,22 +478,13 @@ input[type="submit"] {
             box-shadow: inset 0 -1px 0 rgba(255, 255, 255, 0.5), inset 0 2px 5px rgba(0, 0, 0, 0.15); }
 
 /* Fields */
-input[type="text"],
-input[type="email"],
-input[type="url"],
-input[type="password"],
-input[type="search"],
-textarea {
-  color: #666;
-  border: 1px solid #ccc;
-  border-radius: 3px; }
-  input[type="text"]:focus,
-  input[type="email"]:focus,
-  input[type="url"]:focus,
-  input[type="password"]:focus,
-  input[type="search"]:focus,
-  textarea:focus {
-    color: #111; }
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="url"]:focus,
+input[type="password"]:focus,
+input[type="search"]:focus,
+textarea:focus {
+  color: #111; }
 
 input[type="text"],
 input[type="email"],
@@ -477,7 +516,8 @@ a {
 .main-navigation {
   clear: both;
   display: block;
-  float: left; }
+  float: left;
+  padding-right: 17px; }
   .main-navigation ul {
     display: none;
     list-style: none;
@@ -510,7 +550,9 @@ a {
     text-decoration: none;
     color: white;
     font-family: 'Novecento Sans Web', sans-serif;
-    text-transform: uppercase; }
+    text-transform: uppercase;
+    padding: 0 12px;
+    padding-top: 3px; }
 
 /* Small menu. */
 .menu-toggle,
@@ -625,42 +667,118 @@ a {
       -ms-flex-pack: justify;
           justify-content: space-between;
   position: absolute;
-  width: 100%; }
+  width: 100%;
+  padding-top: 10px; }
 
 .green-header-logo {
   width: 50px;
   height: 33px;
-  position: absolute; }
+  position: absolute;
+  margin-left: 30px; }
 
 .white-header-logo {
   width: 50px;
   height: 33px;
-  display: none; }
+  position: absolute; }
 
 .banner-image {
   height: 100vh;
   width: 100vw;
   position: relative; }
 
+.full-logo {
+  -webkit-transform: translateY(75%);
+          transform: translateY(75%); }
+
+.journal-section {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center; }
+
 .journal-container {
-  display: inline-block;
   width: 360px;
   height: 415px;
-  -webkit-box-align: top;
-      -ms-flex-align: top;
-          align-items: top;
-  border: gray 1px solid; }
+  border: gray 1px solid;
+  -webkit-padding-start: 0;
+          padding-inline-start: 0;
+  list-style-type: none;
+  margin: 0; }
 
 .journal-image {
   width: 360px;
   height: 250px;
   overflow: hidden; }
+  .journal-image img {
+    height: 100%; }
 
-.read-entry a {
-  text-decoration: none;
-  color: black;
-  border: 1px gray solid;
-  padding: 8px 25px; }
+.read-entry {
+  position: absolute; }
+  .read-entry a {
+    text-decoration: none;
+    color: black;
+    border: 1px black solid;
+    padding: 8px 25px; }
+
+.nav-menu {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-right: 30px; }
+
+/*Search*/
+input[type=search] {
+  border: none;
+  outline: none; }
+
+.search-field {
+  background: none;
+  width: 180px; }
+  .search-field::-webkit-input-placeholder {
+    color: white;
+    font-size: 1rem;
+    font-family: 'Novecento Sans Web', sans-serif; }
+  .search-field::-ms-input-placeholder {
+    color: white;
+    font-size: 1rem;
+    font-family: 'Novecento Sans Web', sans-serif; }
+  .search-field::placeholder {
+    color: white;
+    font-size: 1rem;
+    font-family: 'Novecento Sans Web', sans-serif; }
+
+.icon-search {
+  text-decoration: none; }
+  .icon-search .fa {
+    color: white; }
+
+.product-type-blocks {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center; }
+
+.product-type-block-wrapper {
+  max-width: 23.5%;
+  border: 1px gray solid; }
+  .product-type-block-wrapper img {
+    width: 70px;
+    height: 70px; }
+
+.product-image {
+  width: 20%; }
 
 .site-content {
   display: -webkit-box;
@@ -681,6 +799,9 @@ a {
 .widget-area {
   -ms-flex-preferred-size: 25%;
       flex-basis: 25%; }
+
+.day-of-week {
+  font-weight: bold; }
 
 /* Posts and pages */
 .sticky {

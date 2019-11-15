@@ -30,6 +30,7 @@ a {
 	clear: both;
 	display: block;
 	float: left;
+	padding-right: 17px;
 
 	ul {
 		display: none;
@@ -90,6 +91,8 @@ a {
 		color: white;
 		font-family: 'Novecento Sans Web', sans-serif;
 		text-transform: uppercase;
+		padding: 0 12px;
+		padding-top: 3px;
 	}
 
 	.current_page_item > a,

@@ -22,27 +22,25 @@
 
 			<header id="masthead" class="site-header" role="banner">
 				<div class=header-container>
-
-				<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
-					<img class="green-header-logo" src="<?php echo get_template_directory_uri(); ?>/assets/images/logos/inhabitent-logo-tent.svg" alt="header-logo">
-				</a>
-
-
-				<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
-					<img class="white-header-logo" src="<?php echo get_template_directory_uri(); ?>/assets/images/logos/inhabitent-logo-tent-white.svg" alt="header-logo">
-				</a>
-
-				<div class="site-branding">
-					<h1 class="site-title screen-reader-text"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-					<p class="site-description"><?php bloginfo( 'description' ); ?></p>
-				</div><!-- .site-branding -->
-
-				<nav id="site-navigation" class="main-navigation" role="navigation">
-					<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php echo esc_html( 'Primary Menu' ); ?></button>
-					<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?>
-					
-				</nav><!-- #site-navigation -->
-				<?php get_search_form(); ?>
+					<div class="header-logo">
+					<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
+						<img class="green-header-logo" src="<?php echo get_template_directory_uri(); ?>/assets/images/logos/inhabitent-logo-tent.svg" alt="header-logo">
+					</a>
+					<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
+						<img class="white-header-logo" src="<?php echo get_template_directory_uri(); ?>/assets/images/logos/inhabitent-logo-tent-white.svg" alt="header-logo">
+					</a>
+					</div>
+					<div class="site-branding">
+						<h1 class="site-title screen-reader-text"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+						<p class="site-description"><?php bloginfo( 'description' ); ?></p>
+					</div><!-- .site-branding -->
+					<div class="nav-menu">
+						<nav id="site-navigation" class="main-navigation" role="navigation">
+							<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php echo esc_html( 'Primary Menu' ); ?></button>
+							<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?>
+						</nav><!-- #site-navigation -->
+							<?php get_search_form(); ?>
+					</div>
 				</div>
 			</header><!-- #masthead -->
 

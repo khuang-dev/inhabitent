@@ -10,63 +10,110 @@
   justify-content: space-between;
   position: absolute;
   width: 100%;
+  padding-top: 10px;
   // background-color: rgba(255, 255, 255, 0.3);
 }
 .green-header-logo {
   width: 50px;
   height: 33px;
   position: absolute;
+//   display: none;
+  margin-left: 30px;
 }
 .white-header-logo {
   width: 50px;
   height: 33px;
-  display:none;
+  position: absolute;
+//   display: none;
 }
+
 
 .banner-image {
   height: 100vh;
   width: 100vw;
   position: relative;
-  img {
-    // object-fit: cover;
-    // object-position: center top;
-    // width: 100%;
-	// height: 100%;
-	
-    // background-size: cover;
-    // overflow: hidden;
-    // background-color: linear-gradient(
-    //     180deg,
-    //     rgba(0, 0, 0, 0.4) 0,
-    //     rgba(0, 0, 0, 0.4)
-    //   ),
-    //   #969696;
-  }
 }
-.journal-section {
+.full-logo {
+	transform: translateY(75%);
+}
 
+.journal-section {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	// flex-wrap: wrap;
 }
 .journal-container {
-  display: inline-block;
+//   display: flex;
+//   flex-direction: row;
+//   flex-wrap: nowrap;
   width: 360px;
   height: 415px;
-  align-items: top;
   border: gray 1px solid;
+  padding-inline-start: 0;
+  list-style-type: none;
+  margin: 0;
+
 }
 .journal-image {
 	width: 360px;
 	height: 250px;
 	overflow: hidden;
+	img {
+		height: 100%;
+	}
 }
 .fp-journal-title {
 }
 .read-entry {
+	position: absolute;
 	a {
 		text-decoration: none;
 		color: black;
-		border: 1px gray solid;
+		border: 1px black solid;
 		padding: 8px 25px;
+		// position: absolute;
 	}
+}
+.nav-menu {
+	display: flex;
+	margin-right: 30px;
+}
+/*Search*/
+input[type=search] {
+	border: none;
+	outline: none;
+}
+.search-field {
+	background: none;
+	width: 180px;
+	&::placeholder {
+		color: white;
+		font-size: 1rem;
+		font-family: 'Novecento Sans Web', sans-serif;
+	}
+}
+.icon-search {
+		text-decoration: none;
+		.fa {
+			color: white;
+		}
+}
+.product-type-blocks {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+}
+.product-type-block-wrapper {
+	max-width: 23.5%;
+	border: 1px gray solid;
+	img {
+		width: 70px;
+		height: 70px;
+	}
+}
+.product-image {
+	width: 20%;
 }
 // .entry-header {
 // 	display: block;
@@ -108,6 +155,9 @@
 }
 .widget-area {
   flex-basis: 25%;
+}
+.day-of-week {
+	font-weight: bold;
 }
 
 /* Posts and pages */
