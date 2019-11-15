@@ -545,6 +545,9 @@ a {
   .main-navigation li {
     float: left;
     position: relative; }
+    .main-navigation li:hover > a,
+    .main-navigation li.focus > a {
+      color: #f0e4d1; }
   .main-navigation a {
     display: block;
     text-decoration: none;
@@ -552,7 +555,8 @@ a {
     font-family: 'Novecento Sans Web', sans-serif;
     text-transform: uppercase;
     padding: 0 12px;
-    padding-top: 3px; }
+    padding-top: 3px;
+    text-shadow: 1px 1px 2px #323232; }
 
 /* Small menu. */
 .menu-toggle,
@@ -690,6 +694,14 @@ a {
   -webkit-transform: translateY(75%);
           transform: translateY(75%); }
 
+.fp-title {
+  font-size: 2.4rem;
+  font-family: 'Novecento Sans Web', sans-serif;
+  font-weight: 400;
+  color: #2f1339;
+  text-transform: uppercase;
+  margin: 3rem 0; }
+
 .journal-section {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -706,25 +718,54 @@ a {
   width: 360px;
   height: 415px;
   border: gray 1px solid;
-  -webkit-padding-start: 0;
-          padding-inline-start: 0;
   list-style-type: none;
-  margin: 0; }
+  margin: 0 0.8rem;
+  border: 1px solid #e1e1e1;
+  text-align: left;
+  position: relative; }
 
 .journal-image {
   width: 360px;
   height: 250px;
-  overflow: hidden; }
+  overflow: hidden;
+  border-bottom: 5px solid #e1e1e1; }
   .journal-image img {
     height: 100%; }
 
+.journal-meta {
+  font-size: 0.75rem;
+  margin-top: 1.1rem;
+  margin-bottom: 0.1rem;
+  margin-left: 0.9rem; }
+
+.fp-journal-title {
+  font-size: 1.3rem;
+  text-transform: uppercase;
+  font-family: 'Novecento Sans Web', sans-serif;
+  color: #248a83;
+  font-weight: bold;
+  line-height: 1.3;
+  letter-spacing: 2px;
+  margin-left: 0.9rem; }
+  .fp-journal-title:hover {
+    color: #2f1339; }
+
 .read-entry {
-  position: absolute; }
+  position: absolute;
+  top: 89%;
+  left: 3%; }
   .read-entry a {
+    font-size: 0.9rem;
+    font-family: 'Novecento Sans Web', sans-serif;
+    text-transform: uppercase;
     text-decoration: none;
     color: black;
     border: 1px black solid;
-    padding: 8px 25px; }
+    padding: 0.75rem 1.5rem; }
+    .read-entry a:hover {
+      color: white;
+      border-color: #248a83;
+      background: #248a83; }
 
 .nav-menu {
   display: -webkit-box;
@@ -733,23 +774,24 @@ a {
   margin-right: 30px; }
 
 /*Search*/
-input[type=search] {
+input[type='search'] {
   border: none;
-  outline: none; }
+  outline: none;
+  caret-color: white; }
 
 .search-field {
   background: none;
   width: 180px; }
   .search-field::-webkit-input-placeholder {
-    color: white;
+    color: #f0e4d1;
     font-size: 1rem;
     font-family: 'Novecento Sans Web', sans-serif; }
   .search-field::-ms-input-placeholder {
-    color: white;
+    color: #f0e4d1;
     font-size: 1rem;
     font-family: 'Novecento Sans Web', sans-serif; }
   .search-field::placeholder {
-    color: white;
+    color: #f0e4d1;
     font-size: 1rem;
     font-family: 'Novecento Sans Web', sans-serif; }
 
@@ -757,6 +799,8 @@ input[type=search] {
   text-decoration: none; }
   .icon-search .fa {
     color: white; }
+    .icon-search .fa:hover {
+      color: #f0e4d1; }
 
 .product-type-blocks {
   display: -webkit-box;
@@ -768,14 +812,31 @@ input[type=search] {
           flex-direction: row;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
-          justify-content: center; }
+          justify-content: center;
+  width: 100vw; }
 
 .product-type-block-wrapper {
-  max-width: 23.5%;
-  border: 1px gray solid; }
+  width: 22%;
+  border: 1px #e1e1e1 solid;
+  border-top-width: 5px;
+  padding: 0.75rem;
+  margin: 0 0.75rem; }
+  .product-type-block-wrapper:hover {
+    border-color: #d99054; }
   .product-type-block-wrapper img {
     width: 70px;
-    height: 70px; }
+    height: 70px;
+    margin-bottom: 1.25rem; }
+  .product-type-block-wrapper a {
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-family: 'Novecento Sans Web', sans-serif;
+    text-transform: uppercase;
+    background: #248a83;
+    padding: 0.75rem 1.5rem;
+    color: white; }
+    .product-type-block-wrapper a:hover {
+      background: #19625d; }
 
 .product-image {
   width: 20%; }
@@ -839,19 +900,24 @@ input[type=search] {
   display: block; }
 
 /* Footer */
-.site-info {
+.site-footer {
   background-color: black;
   background-image: url("../../assets/images/dark-wood@2x.png");
   background-size: 512px 512px;
+  height: 355px;
+  width: 100vw; }
+
+.site-info {
+  padding-top: 4rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  width: 100%;
-  height: 355px;
-  -ms-flex-pack: distribute;
-      justify-content: space-around; }
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding-left: 4rem; }
   .site-info p {
     color: #fff; }
 
@@ -860,22 +926,35 @@ input[type=search] {
   color: #d99054;
   text-transform: uppercase;
   font-size: 1.2rem;
-  line-height: 1.15; }
+  line-height: 1.15;
+  letter-spacing: 2px;
+  font-weight: bold;
+  margin-bottom: 1.2rem; }
 
 .footer-logo {
-  width: 320px;
-  padding-top: 30px;
-  padding-right: 20px; }
+  width: 285px;
+  -ms-flex-preferred-size: 50%;
+      flex-basis: 50%;
+  margin-left: 10rem; }
+
+.contact-section {
+  line-height: 1.15;
+  padding-left: 4rem;
+  -ms-flex-preferred-size: 25%;
+      flex-basis: 25%; }
 
 .contact-info {
-  line-height: 1.15;
-  padding-top: 50px;
-  padding-left: 25px; }
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex; }
+  .contact-info p {
+    padding-left: 5px; }
 
 .business-hours {
   line-height: 1.15;
-  padding-top: 50px;
-  padding-right: 250px; }
+  -ms-flex-preferred-size: 25%;
+      flex-basis: 25%;
+  padding-left: 3rem; }
 
 .copyright {
   font-family: 'Novecento Sans Web', sans-serif;
@@ -883,7 +962,21 @@ input[type=search] {
   width: 100%;
   text-align: center;
   text-transform: uppercase;
-  padding-top: 40px; }
+  padding-top: 75px; }
+
+.footer-icon {
+  color: white;
+  font-size: 1.3rem; }
+
+.social-media-icon {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start; }
+  .social-media-icon i {
+    margin-right: 10px; }
 
 /*--------------------------------------------------------------
 # Media

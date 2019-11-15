@@ -20,7 +20,7 @@ get_header(); ?>
 			<?php endwhile; // End of the loop. ?>
 
 			<section class="product-info container">
-            <h2>Shop Stuff</h2>
+            <h2 class="fp-title">Shop Stuff</h2>
             <?php
                $terms = get_terms( array(
                    'taxonomy' => 'product_type',
@@ -39,7 +39,7 @@ get_header(); ?>
                </div>
             <?php endif; ?>
 		 </section>
-		 <h2>inhabitent journal</h2>
+		 <h2 class="fp-title">inhabitent journal</h2>
 			<?php 
 				$args = array( 'post_type' => 'post', 'order' => 'ASC', 'posts_per_page' => 3);
    				$product_posts = get_posts( $args ); // returns an array of posts
@@ -65,7 +65,7 @@ get_header(); ?>
 
 			<?php endforeach; wp_reset_postdata(); ?>
 			</div>
-			<h2>latest adventures</h2>
+			<h2 class="fp-title">latest adventures</h2>
 
 		</main><!-- #main -->
 	</div><!-- #primary -->

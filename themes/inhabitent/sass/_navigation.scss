@@ -83,6 +83,7 @@ a {
 
 		&:hover > a,
 		&.focus > a {
+			color: #f0e4d1;
 		}
 	}
 	a {
@@ -93,6 +94,7 @@ a {
 		text-transform: uppercase;
 		padding: 0 12px;
 		padding-top: 3px;
+		text-shadow: 1px 1px 2px #323232;
 	}
 
 	.current_page_item > a,
