@@ -3,15 +3,19 @@
 // --------------------------------------------------------------*/
 .site-header {
   position: relative;
+  width: 100%;
   z-index: 99;
+  border-bottom: 1px solid #e1e1e1;
 }
 .header-container {
   display: flex;
   justify-content: space-between;
-  position: absolute;
   width: 100%;
-  padding-top: 10px;
-  // background-color: rgba(255, 255, 255, 0.3);
+  padding: 10px 0;
+  background-color: rgba(255, 255, 255, 0.8);
+}
+.fixed-header {
+  position: relative;
 }
 .green-header-logo {
   width: 50px;
@@ -32,6 +36,7 @@
   width: 100vw;
   position: relative;
 }
+
 .full-logo {
   transform: translateY(75%);
 }
@@ -57,7 +62,6 @@
   border: 1px solid #e1e1e1;
   text-align: left;
   position: relative;
-
 }
 .journal-image {
   width: 360px;
@@ -69,10 +73,10 @@
   }
 }
 .journal-meta {
-font-size: 0.75rem;
-margin-top: 1.1rem;
-margin-bottom: 0.1rem;
-margin-left: 0.9rem;
+  font-size: 0.75rem;
+  margin-top: 1.1rem;
+  margin-bottom: 0.1rem;
+  margin-left: 0.9rem;
 }
 .fp-journal-title {
   font-size: 1.3rem;
@@ -83,9 +87,9 @@ margin-left: 0.9rem;
   line-height: 1.3;
   letter-spacing: 2px;
   margin-left: 0.9rem;
-&:hover {
-  color: #2f1339;
-}
+  &:hover {
+    color: #2f1339;
+  }
 }
 .read-entry {
   position: absolute;
@@ -106,6 +110,45 @@ margin-left: 0.9rem;
     }
   }
 }
+.read-more {
+  @extend .read-entry;
+  position: relative;
+  width: 50%;
+  text-align: left;
+  top: 0;
+  left: 0;
+  margin-bottom: 4rem;
+}
+
+.reverse-read-more {
+  @extend .read-more;
+  width: auto;
+  margin-top: 1rem;
+  a {
+    color: white;
+    border: 1px white solid;
+    &:hover {
+      border-color: #248a83;
+      background: #248a83;
+    }
+  }
+}
+.green-read-more {
+@extend .read-more;
+margin-top: 5rem;
+position: relative;
+  a{
+    font-size: 1.2rem;
+    color: white;
+    background-color: #248a83;
+    border: 1px #248a83 solid;
+      &:hover {
+        background-color: #19625d;
+        border: 1px #19625d solid;
+      }
+    }
+}
+
 .nav-menu {
   display: flex;
   margin-right: 30px;
@@ -114,23 +157,28 @@ margin-left: 0.9rem;
 input[type='search'] {
   border: none;
   outline: none;
-  caret-color: white;
+  // caret-color: white;
+  caret-color: #2f1339;
 }
 .search-field {
   background: none;
   width: 180px;
   &::placeholder {
-    color: #f0e4d1;
+    // color: #f0e4d1;
+    color: #666;
     font-size: 1rem;
     font-family: 'Novecento Sans Web', sans-serif;
   }
 }
+.search-toggle {
+  display: none;
+}
 .icon-search {
   text-decoration: none;
   .fa {
-    color: white;
+    color: #248a83;
     &:hover {
-      color: #f0e4d1;
+      // color: #f0e4d1;
     }
   }
 }
@@ -163,41 +211,56 @@ input[type='search'] {
     padding: 0.75rem 1.5rem;
     color: white;
     &:hover {
-      background:#19625d;
+      background: #19625d;
     }
   }
 }
 .product-image {
   width: 20%;
 }
-// .entry-header {
-// 	display: block;
-// 	position: relative;
-// 		.entry-title {
-// 		position: absolute;
-// 		background: #248a83;
-// 		left: 0;
-// 		top: 50px;
-// 		padding: 0.25rem 1.5rem;
-// 		a{
-// 			display: inline-block;
-// 			text-decoration: none;
-// 			color: $color__text-journal-title;
-// 			font-family: 'Novecento Sans Web';
-// 			font-size: 2.1rem;
-// 			max-width: 450px;
-// 		}
-// 		}
-// 		.entry-meta {
-// 		position: absolute;
-// 		background: #248a83;
-// 		color: $color__text-journal-title;
-// 		bottom: 7px;
-// 		right: 480px;
-// 		font-family: 'Novecento Sans Web';
-
-// 	}
-// }
+.entry-header {
+  display: block;
+  position: relative;
+  img {
+    width: 100%;
+  }
+  .entry-title {
+    position: absolute;
+    background: #248a83;
+    top: 40px;
+    padding: 1rem 1rem;
+    max-width: 570px;
+    a {
+      display: inline-block;
+      text-decoration: none;
+      color: $color__text-journal-title;
+      font-family: 'Novecento Sans Web';
+      font-size: 2.1rem;
+      width: 100%;
+      letter-spacing: 2px;
+      text-align: left;
+      font-weight: bold;
+      line-height: 1.25;
+      margin-right: 3rem;
+      &:hover {
+        color: #f0e4d1;
+      }
+    }
+  }
+  .entry-meta {
+    right: 0;
+    position: absolute;
+    background: #248a83;
+    color: $color__text-journal-title;
+    bottom: 6px;
+    font-family: 'Novecento Sans Web';
+    text-transform: uppercase;
+    padding: 0.2rem 1.5rem;
+  }
+}
+.entry-content {
+  text-align: left;
+}
 
 .site-content {
   display: flex;
@@ -207,9 +270,18 @@ input[type='search'] {
 .content-area {
   align-items: center;
   text-align: center;
+  flex-basis: 70%;
 }
 .widget-area {
-  flex-basis: 25%;
+  flex-basis: 30%;
+  border-left: 1px solid #e1e1e1;
+  padding-left: 3rem;
+  padding-top: 2rem;
+}
+.widget-title {
+  margin: 1.5rem 0;
+  font-size: 1.5rem;
+  font-weight: bold;
 }
 .day-of-week {
   font-weight: bold;
@@ -328,4 +400,115 @@ input[type='search'] {
   i {
     margin-right: 10px;
   }
+}
+
+.product-archive-section {
+  display: grid;
+grid-template-columns: repeat(4, 1fr);
+width: 1120px;
+margin: 0 auto;
+}
+.product-archive-container {
+  border: 1px #e1e1e1 solid;
+  width: 260px;
+  margin: 0 auto;
+}
+.product-image {
+height: 250px;
+width: auto;
+overflow: hidden;
+border-bottom: 5px #e1e1e1 solid;
+img {
+  height: 250px;
+  width: auto;
+}
+}
+.product-archive-title {
+  font-size: 2.4rem;
+  color: #404040;
+  font-weight: bold;
+}
+.product-title {
+  color: #2f1339;
+}
+
+.sb-icon {
+  margin-right: 20px;
+}
+.sb-info-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.widget {
+  margin-bottom: 3rem;
+  ul {
+    list-style-type: none;
+    margin-left: 0;
+    a {
+      text-decoration: none;
+      color: #248a83;
+    }
+  }
+}
+
+.journal-posts-container {
+  width: 760px;
+  padding-top: 3rem;
+  margin: 0 auto;
+  margin-right: 3.5rem;
+}
+.adventure-section {
+  width: 1120px;
+  height: 550px;
+  display: grid;
+  margin: 0 auto;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: 2fr;
+  grid-gap: 20px 20px;
+}
+.adventure-container {
+  position: relative;
+  list-style-type: none;
+  &:first-child {
+    grid-column: 1 / 3;
+    grid-row: 1 / 3;
+    font-size: 3rem;
+  }
+  &:nth-child(2) {
+    grid-column: 3 / 5;
+    grid-row: 1 / 2;
+    font-size: 2.4rem;
+  }
+  &:nth-child(3) {
+    grid-column: 3 / 4;
+    grid-row: 2 / 3;
+    font-size: 1.6rem;
+  }
+  &:nth-child(4) {
+    grid-column: 4 / 5;
+    grid-row: 2 / 3;
+    font-size: 1.6rem;
+  }
+}
+.adventure-title-info {
+  position: absolute;
+  text-align: left;
+  top: 2.5rem;
+  left: 1.5rem;
+}
+.adventure-image {
+width: 100%;
+height: 100%;
+}
+.fp-adventure-title {
+color: white;
+font-weight: 400;
+line-height: 1.25;
+letter-spacing: 2;
+// a {
+  &:hover {
+    color: #f0e4d1;
+  }
+// }
 }

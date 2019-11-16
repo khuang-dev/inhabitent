@@ -21,6 +21,14 @@ body {
   background: $color__background-body; /* Fallback for when there is no custom background color defined. */
   font-family: 'Merriweather Web', sans-serif;
 }
+h2 {
+  font-family: 'Novecento Sans Web', sans-serif;
+  text-transform: uppercase;
+  color: #2f1339;
+}
+p {
+  font-family: 'Merriweather Web', sans-serif;
+}
 
 blockquote,
 q {

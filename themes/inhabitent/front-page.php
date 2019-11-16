@@ -11,7 +11,7 @@ get_header(); ?>
 		<main id="main" class="site-main" role="main">
 
 			<?php while ( have_posts() ) : the_post(); ?>
-				<div class="banner-image" style="background: linear-gradient(180deg,rgba(0,0,0,.4) 0,rgba(0,0,0,.4)),#969696 url(<?php echo get_the_post_thumbnail_url(); ?>); background-size: cover;">
+				<div id="banner-image" class="banner-image" style="background: linear-gradient(180deg,rgba(0,0,0,.4) 0,rgba(0,0,0,.4)),#969696 url(<?php echo get_the_post_thumbnail_url(); ?>); background-size: cover;">
 					<?php //the_post_thumbnail(); ?>
 					<img class="full-logo" src="<?php echo get_template_directory_uri(); ?>/assets/images/logos/inhabitent-logo-full.svg" alt="full-logo">
 				</div>
@@ -41,7 +41,7 @@ get_header(); ?>
 		 </section>
 		 <h2 class="fp-title">inhabitent journal</h2>
 			<?php 
-				$args = array( 'post_type' => 'post', 'order' => 'ASC', 'posts_per_page' => 3);
+				$args = array( 'post_type' => 'post', 'order' => 'DSC', 'posts_per_page' => 3);
    				$product_posts = get_posts( $args ); // returns an array of posts
 			?>
 			<div class="journal-section">
@@ -59,13 +59,37 @@ get_header(); ?>
 						   		<?php the_title(); ?>
 								</div>
 								<div class="read-entry">
-								<a href="">read entry</a>
+								<a href="<?php echo get_post_permalink($post);?>">read entry</a>
 								</div>
 						</ul>
 
 			<?php endforeach; wp_reset_postdata(); ?>
 			</div>
 			<h2 class="fp-title">latest adventures</h2>
+			<?php 
+				$args = array( 'post_type' => 'adventure', 'order' => 'ASC', 'posts_per_page' => 4);
+   				$product_posts = get_posts( $args ); // returns an array of posts
+			?>
+			<ul class="adventure-section">
+
+			<?php foreach ( $product_posts as $post ) : setup_postdata( $post ); ?>
+   				<?php /* Content from your array of post results goes here */ ?>
+					   <li class="adventure-container">
+					   			<div class="adventure-image" style="background: linear-gradient(180deg,rgba(0,0,0,.4) 0,rgba(0,0,0,.4)),#969696 url(<?php echo get_the_post_thumbnail_url(); ?>); background-size: cover; background-position: center;">
+								<div class="adventure-title-info">
+									<div class="fp-adventure-title">
+						   				<?php the_title(); ?>
+									</div>
+									<div class="reverse-read-more">
+										<a href="">read more</a>
+									</div>
+								  </div>
+				  				</div>
+				  </li>
+
+			<?php endforeach; wp_reset_postdata(); ?>
+				  </ul>
+				  <div class="green-read-more"><a href="">more adventures</a></div>
 
 		</main><!-- #main -->
 	</div><!-- #primary -->
