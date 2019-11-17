@@ -19,7 +19,7 @@ get_header(); ?>
 
 			<?php endwhile; // End of the loop. ?>
 
-			<section class="product-info container">
+			<section class="product-nav-container">
             <h2 class="fp-title">Shop Stuff</h2>
             <?php
                $terms = get_terms( array(
@@ -39,6 +39,7 @@ get_header(); ?>
                </div>
             <?php endif; ?>
 		 </section>
+
 		 <h2 class="fp-title">inhabitent journal</h2>
 			<?php 
 				$args = array( 'post_type' => 'post', 'order' => 'DSC', 'posts_per_page' => 3);
@@ -50,28 +51,24 @@ get_header(); ?>
    				<?php /* Content from your array of post results goes here */ ?>
 					   <ul class="journal-container">
 					   			<div class="journal-image">
-								<?php the_post_thumbnail(); ?>
-								</div>
+								<?php the_post_thumbnail(); ?></div>
 								<div class="journal-meta">
-								<?php echo get_the_date(); ?> / <?php echo get_comments_number(); ?> Comments
-								</div>
+								<?php echo get_the_date(); ?> / <?php echo get_comments_number(); ?> Comments</div>
 								<div class="fp-journal-title">
-						   		<?php the_title(); ?>
-								</div>
+						   		<?php the_title(); ?></div>
 								<div class="read-entry">
-								<a href="<?php echo get_post_permalink($post);?>">read entry</a>
-								</div>
+								<a href="<?php echo get_post_permalink($post);?>">read entry</a></div>
 						</ul>
 
 			<?php endforeach; wp_reset_postdata(); ?>
 			</div>
+
 			<h2 class="fp-title">latest adventures</h2>
 			<?php 
 				$args = array( 'post_type' => 'adventure', 'order' => 'ASC', 'posts_per_page' => 4);
    				$product_posts = get_posts( $args ); // returns an array of posts
 			?>
 			<ul class="adventure-section">
-
 			<?php foreach ( $product_posts as $post ) : setup_postdata( $post ); ?>
    				<?php /* Content from your array of post results goes here */ ?>
 					   <li class="adventure-container">
@@ -86,7 +83,6 @@ get_header(); ?>
 								  </div>
 				  				</div>
 				  </li>
-
 			<?php endforeach; wp_reset_postdata(); ?>
 				  </ul>
 				  <div class="green-read-more"><a href="">more adventures</a></div>

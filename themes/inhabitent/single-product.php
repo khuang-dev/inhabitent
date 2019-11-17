@@ -11,23 +11,25 @@ get_header(); ?>
 		<main id="main" class="site-main" role="main">
 
 		<?php while ( have_posts() ) : the_post(); ?>
-		<h2>$<?php the_field('price'); ?></h2>
-
-			<?php get_template_part( 'template-parts/content', 'single' ); ?>
-
-			<?php the_post_navigation(); ?>
-
-			<?php
-				// If comments are open or we have at least one comment, load up the comment template.
-				if ( comments_open() || get_comments_number() ) :
-					comments_template();
-				endif;
-			?>
+			<div class="product-single-container">
+				<div class="single-product-image">
+					<?php the_post_thumbnail(); ?></div>
+					<div class="product-content">
+						<p class="single-product-title"><?php the_title(); ?></p>
+						<p class="single-price">$<?php the_field('price'); ?></p>
+						<span class="product-description"><?php the_content();?></span>
+						<div class="like-tweet-pin">
+							<a href=""><i class="link-icon fab fa-facebook-f"></i>like</a></div>
+						<div class="like-tweet-pin">
+							<a href=""><i class="link-icon fab fa-twitter"></i>tweet</a></div>
+						<div class="like-tweet-pin">
+							<a href=""><i class="link-icon fab fa-pinterest"></i>pin</a></div>
+						</div>
+				</div>
 
 		<?php endwhile; // End of the loop. ?>
 
 		</main><!-- #main -->
 	</div><!-- #primary -->
 
-<?php get_sidebar(); ?>
 <?php get_footer(); ?>

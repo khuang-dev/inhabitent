@@ -10,29 +10,18 @@ get_header(); ?>
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
 
-		<section class="archive-header">
-            <h2 class="product-archive-title">Shop Stuff</h2>
-            <?php
-               $terms = get_terms( array(
-                   'taxonomy' => 'product_type',
-                   'hide_empty' => 0,
-			   ) );
-               if ( ! empty( $terms ) && ! is_wp_error( $terms ) ) :
-            ?>
-               <div class="product-type-blocks">
-                  <?php foreach ( $terms as $term ) : ?>
-                     <div class="product-type-link">
-                        <p><a href="<?php echo get_term_link( $term ); ?>" class="btn"><?php echo $term->name; ?></a></p>
-                     </div>
-                  <?php endforeach; ?>
-               </div>
-            <?php endif; ?>
-		 </section>
+		<header class="archive-header">
+		<h2 class="product-archive-title"><?php single_term_title(); ?></h2>
+		<span class="product-type-description"><?php the_archive_description(); ?></span>
+		</header>
 
 	
 <section class="all-products">
 	<?php 
-				$args = array( 'post_type' => 'product', 'order' => 'ASC', 'posts_per_page' => 16);
+
+		$term = get_term_by( 'slug', get_query_var('term'), get_query_var('taxonomy') );
+
+				$args = array( 'post_type' => 'product', 'order' => 'ASC', 'posts_per_page' => 16,);
    				$product_posts = get_posts( $args ); // returns an array of posts
 			?>
 			<div class="product-archive-section">
@@ -46,6 +35,8 @@ get_header(); ?>
 								<div class="product-info">
 								   <p class=archive-product-title><?php the_title(); ?></p>
 								   <p class=archive-price>$<?php the_field('price'); ?></p>
+								</div>
+								<div class="archive-price">
 								</div>
 				  </div>
 			<?php endforeach; wp_reset_postdata(); ?>
