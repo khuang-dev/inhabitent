@@ -759,10 +759,12 @@ a {
 .journal-meta {
   font-size: 0.75rem;
   margin-top: 1.1rem;
-  margin-bottom: 0.1rem;
+  margin-bottom: 0.1rem; }
+
+.fp-journal-content {
   margin-left: 0.9rem; }
 
-.fp-journal-title {
+.fp-journal-title a {
   font-size: 1.3rem;
   text-transform: uppercase;
   font-family: 'Novecento Sans Web', sans-serif;
@@ -770,8 +772,8 @@ a {
   font-weight: bold;
   line-height: 1.3;
   letter-spacing: 2px;
-  margin-left: 0.9rem; }
-  .fp-journal-title:hover {
+  text-decoration: none; }
+  .fp-journal-title a:hover {
     color: #2f1339; }
 
 .link-icon {
@@ -849,15 +851,18 @@ input[type="search"] {
   .search-field::-webkit-input-placeholder {
     color: #666;
     font-size: 1rem;
-    font-family: 'Novecento Sans Web', sans-serif; }
+    font-family: 'Novecento Sans Web', sans-serif;
+    text-transform: uppercase; }
   .search-field::-ms-input-placeholder {
     color: #666;
     font-size: 1rem;
-    font-family: 'Novecento Sans Web', sans-serif; }
+    font-family: 'Novecento Sans Web', sans-serif;
+    text-transform: uppercase; }
   .search-field::placeholder {
     color: #666;
     font-size: 1rem;
-    font-family: 'Novecento Sans Web', sans-serif; }
+    font-family: 'Novecento Sans Web', sans-serif;
+    text-transform: uppercase; }
 
 .search-toggle {
   display: none; }
@@ -917,6 +922,7 @@ input[type="search"] {
     padding: 1rem 1rem;
     max-width: 570px;
     text-decoration: none;
+    text-transform: uppercase;
     color: #fff;
     font-family: 'Novecento Sans Web', sans-serif;
     font-size: 2.1rem;
@@ -945,11 +951,12 @@ input[type="search"] {
     position: absolute;
     background: #248a83;
     color: #fff;
-    bottom: 6px;
+    bottom: 8px;
     font-family: 'Novecento Sans Web';
     text-transform: uppercase;
     padding: 0.2rem 1.5rem; }
     .entry-header .entry-meta a {
+      bottom: 8px;
       text-decoration: none;
       color: white; }
       .entry-header .entry-meta a:hover {
@@ -1272,7 +1279,7 @@ input[type="search"] {
   margin: 0 auto;
   margin-right: 3.5rem; }
 
-.adventure-section {
+.fp-adventure-section {
   width: 1120px;
   height: 550px;
   display: grid;
@@ -1281,25 +1288,44 @@ input[type="search"] {
   grid-auto-rows: 2fr;
   grid-gap: 20px 20px; }
 
-.adventure-container {
+.archive-adventure-section {
+  height: 1120px;
+  margin-top: 3rem;
+  margin-bottom: 7rem; }
+
+.fp-adventure-container {
   position: relative;
   list-style-type: none; }
-  .adventure-container:first-child {
+  .fp-adventure-container:first-child {
     grid-column: 1 / 3;
     grid-row: 1 / 3;
     font-size: 3rem; }
-  .adventure-container:nth-child(2) {
+  .fp-adventure-container:nth-child(2) {
     grid-column: 3 / 5;
     grid-row: 1 / 2;
     font-size: 2.4rem; }
-  .adventure-container:nth-child(3) {
+  .fp-adventure-container:nth-child(3) {
     grid-column: 3 / 4;
     grid-row: 2 / 3;
     font-size: 1.6rem; }
-  .adventure-container:nth-child(4) {
+  .fp-adventure-container:nth-child(4) {
     grid-column: 4 / 5;
     grid-row: 2 / 3;
     font-size: 1.6rem; }
+
+.archive-adventure-container:nth-child(2) {
+  grid-row: 1/3;
+  font-size: 3rem; }
+
+.archive-adventure-container:nth-child(3) {
+  grid-column: 1/3;
+  grid-row: 3/5;
+  font-size: 3rem; }
+
+.archive-adventure-container:nth-child(4) {
+  grid-column: 3/5;
+  grid-row: 3/5;
+  font-size: 3rem; }
 
 .adventure-title-info {
   position: absolute;
@@ -1312,12 +1338,15 @@ input[type="search"] {
   height: 100%; }
 
 .fp-adventure-title {
-  color: white;
-  font-weight: 400;
-  line-height: 1.25;
-  letter-spacing: 2; }
-  .fp-adventure-title:hover {
-    color: #f0e4d1; }
+  line-height: 1; }
+  .fp-adventure-title a {
+    color: white;
+    font-weight: 400;
+    letter-spacing: 2px;
+    width: 85%;
+    text-decoration: none; }
+    .fp-adventure-title a:hover {
+      color: #f0e4d1; }
 
 .comments-area {
   text-align: left; }
@@ -1491,7 +1520,7 @@ input[type='url'] {
 .find-us-title, .find-us-content h2 {
   font-size: 2.4rem;
   text-transform: uppercase;
-  font-family: "Novecento Sans Web", sans-serif;
+  font-family: 'Novecento Sans Web', sans-serif;
   font-weight: bold;
   padding-bottom: 1rem; }
 
@@ -1508,12 +1537,12 @@ input[type='url'] {
 .contact-submit-button {
   margin-top: 1rem; }
 
-.your-name input[type=text],
-.your-name input[type=email],
-.your-email input[type=text],
-.your-email input[type=email],
-.your-subject input[type=text],
-.your-subject input[type=email] {
+.your-name input[type='text'],
+.your-name input[type='email'],
+.your-email input[type='text'],
+.your-email input[type='email'],
+.your-subject input[type='text'],
+.your-subject input[type='email'] {
   width: 380px;
   height: 40px;
   margin-bottom: 1.5rem; }
@@ -1524,6 +1553,108 @@ input[type='url'] {
 .wpcf7-submit {
   margin-top: 2rem;
   margin-bottom: 8rem; }
+
+figure {
+  margin: 0; }
+
+.search-main, .main-404 {
+  width: 760px;
+  text-align: left;
+  margin: 0 auto;
+  padding-top: 3rem;
+  margin-right: 3.5rem; }
+
+.search-title, .search-post-title a, .title-404, .post-adventure-title, .post-adventure-author {
+  text-transform: uppercase;
+  color: #404040;
+  font-family: 'Novecento Sans Web', sans-serif;
+  font-size: 2.4rem;
+  font-weight: bold;
+  border-bottom: 1px solid #e1e1e1;
+  letter-spacing: 2px; }
+
+.search-post-title a {
+  border: none;
+  font-size: 2.1rem;
+  color: #248a83;
+  text-decoration: none; }
+  .search-post-title a:hover {
+    color: #2f1339; }
+
+.page-numbers {
+  color: white;
+  font-family: 'Novecento Sans Web', sans-serif;
+  text-decoration: none;
+  background: #248a83;
+  padding: 0.4rem 0.85rem;
+  margin-right: 0.25rem; }
+  .page-numbers:hover {
+    color: white;
+    background: #2f1339; }
+
+.current {
+  background: gray; }
+  .current:hover {
+    background: gray; }
+
+.search-number-nav {
+  border-top: 1px solid #e1e1e1;
+  padding-top: 1.5rem;
+  margin-bottom: 4.5rem; }
+
+.title-404, .post-adventure-title, .post-adventure-author {
+  border: none; }
+
+.content-404 p {
+  margin: 0; }
+
+.widgettitle, .widget-title {
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 2px; }
+
+.search-404 .search-form .icon-search {
+  display: none; }
+
+.search-404 input[type='search'] {
+  width: 200px;
+  padding: 1.5rem 0; }
+  .search-404 input[type='search']::-webkit-input-placeholder {
+    text-transform: none;
+    font-family: 'Merriweather Web', sans-serif;
+    color: #666;
+    border: 1px solid #e1e1e1;
+    background: #f4f4f4;
+    padding: 0.5rem 1rem 0.5rem 0.25rem;
+    text-align: left; }
+  .search-404 input[type='search']::-ms-input-placeholder {
+    text-transform: none;
+    font-family: 'Merriweather Web', sans-serif;
+    color: #666;
+    border: 1px solid #e1e1e1;
+    background: #f4f4f4;
+    padding: 0.5rem 1rem 0.5rem 0.25rem;
+    text-align: left; }
+  .search-404 input[type='search']::placeholder {
+    text-transform: none;
+    font-family: 'Merriweather Web', sans-serif;
+    color: #666;
+    border: 1px solid #e1e1e1;
+    background: #f4f4f4;
+    padding: 0.5rem 1rem 0.5rem 0.25rem;
+    text-align: left; }
+
+.post-adventure-title {
+  text-align: left;
+  line-height: 1.25;
+  margin-bottom: 0.5rem; }
+
+.post-adventure-author {
+  text-align: left;
+  font-size: 1.2rem;
+  font-weight: normal;
+  margin-bottom: 1.5rem; }
 
 /*--------------------------------------------------------------
 # Media

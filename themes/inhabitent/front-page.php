@@ -52,12 +52,14 @@ get_header(); ?>
 					   <ul class="journal-container">
 					   			<div class="journal-image">
 								<?php the_post_thumbnail(); ?></div>
+								<div class="fp-journal-content">
 								<div class="journal-meta">
 								<?php echo get_the_date(); ?> / <?php echo get_comments_number(); ?> Comments</div>
 								<div class="fp-journal-title">
-						   		<?php the_title(); ?></div>
+						   		<a href="<?php echo get_post_permalink($post);?>"><?php the_title(); ?></a></div>
 								<div class="read-entry">
 								<a href="<?php echo get_post_permalink($post);?>">read entry</a></div>
+				  			</div>
 						</ul>
 
 			<?php endforeach; wp_reset_postdata(); ?>
@@ -68,24 +70,24 @@ get_header(); ?>
 				$args = array( 'post_type' => 'adventure', 'order' => 'ASC', 'posts_per_page' => 4);
    				$product_posts = get_posts( $args ); // returns an array of posts
 			?>
-			<ul class="adventure-section">
+			<ul class="fp-adventure-section">
 			<?php foreach ( $product_posts as $post ) : setup_postdata( $post ); ?>
    				<?php /* Content from your array of post results goes here */ ?>
-					   <li class="adventure-container">
+					   <li class="fp-adventure-container">
 					   			<div class="adventure-image" style="background: linear-gradient(180deg,rgba(0,0,0,.4) 0,rgba(0,0,0,.4)),#969696 url(<?php echo get_the_post_thumbnail_url(); ?>); background-size: cover; background-position: center;">
 								<div class="adventure-title-info">
 									<div class="fp-adventure-title">
-						   				<?php the_title(); ?>
+									<a href="<?php echo get_post_permalink($post);?>"><?php the_title(); ?></a>
 									</div>
 									<div class="reverse-read-more">
-										<a href="">read more</a>
+										<a href="<?php echo get_post_permalink($post);?>">read more</a>
 									</div>
 								  </div>
 				  				</div>
 				  </li>
 			<?php endforeach; wp_reset_postdata(); ?>
 				  </ul>
-				  <div class="green-read-more"><a href="">more adventures</a></div>
+				  <div class="green-read-more"><a href="<?php echo get_post_type_archive_link('adventure')?>">more adventures</a></div>
 
 		</main><!-- #main -->
 	</div><!-- #primary -->
