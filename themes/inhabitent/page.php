@@ -11,9 +11,12 @@ get_header(); ?>
 		<main id="main" class="site-main" role="main">
 
 			<?php while ( have_posts() ) : the_post(); ?>
-
-				<?php get_template_part( 'template-parts/content', 'page' ); ?>
-
+			<div class="find-us-title">
+				<?php single_post_title(); ?>
+			</div>
+			<section class="find-us-content">
+				<?php the_content()?>
+			</section>
 			<?php endwhile; // End of the loop. ?>
 
 		</main><!-- #main -->

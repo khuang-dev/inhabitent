@@ -19,7 +19,6 @@ get_header(); ?>
 <section class="all-products">
 	<?php 
 
-		$term = get_term_by( 'slug', get_query_var('term'), get_query_var('taxonomy') );
 
 				$args = array( 'post_type' => 'product', 'order' => 'ASC', 'posts_per_page' => 16,);
    				$product_posts = get_posts( $args ); // returns an array of posts
@@ -27,6 +26,7 @@ get_header(); ?>
 			<div class="product-archive-section">
 
 			<?php foreach ( $product_posts as $post ) : setup_postdata( $post ); ?>
+			
    				<?php /* Content from your array of post results goes here */ ?>
 					   <div class="product-archive-container">
 					   			<div class="product-image">
@@ -36,9 +36,7 @@ get_header(); ?>
 								   <p class=archive-product-title><?php the_title(); ?></p>
 								   <p class=archive-price>$<?php the_field('price'); ?></p>
 								</div>
-								<div class="archive-price">
-								</div>
-				  </div>
+				  		</div>
 			<?php endforeach; wp_reset_postdata(); ?>
 			</div>
 	</section>

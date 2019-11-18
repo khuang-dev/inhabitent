@@ -20,6 +20,8 @@ html {
 body {
   background: $color__background-body; /* Fallback for when there is no custom background color defined. */
   font-family: 'Merriweather Web', sans-serif;
+  line-height: 1.75;
+  
 }
 h2 {
   font-family: 'Novecento Sans Web', sans-serif;

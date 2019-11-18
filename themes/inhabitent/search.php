@@ -18,8 +18,8 @@ get_header(); ?>
 
 			<?php /* Start the Loop */ ?>
 			<?php while ( have_posts() ) : the_post(); ?>
-
-				<?php get_template_part( 'template-parts/content', 'search' ); ?>
+				<?php the_title(); ?>
+				<?php the_excerpt(); ?>
 
 			<?php endwhile; ?>
 

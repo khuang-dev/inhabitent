@@ -392,7 +392,8 @@ html {
 body {
   background: #fff;
   /* Fallback for when there is no custom background color defined. */
-  font-family: 'Merriweather Web', sans-serif; }
+  font-family: 'Merriweather Web', sans-serif;
+  line-height: 1.75; }
 
 h2 {
   font-family: 'Novecento Sans Web', sans-serif;
@@ -699,6 +700,15 @@ a {
   height: 100vh;
   width: 100vw;
   position: relative; }
+  .banner-image h1 {
+    position: absolute;
+    color: white;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 3rem;
+    font-family: 'Novecento Sans Web', sans-serif;
+    left: 44.5%;
+    top: 40%; }
 
 .full-logo {
   -webkit-transform: translateY(75%);
@@ -711,6 +721,10 @@ a {
   color: #2f1339;
   text-transform: uppercase;
   margin: 3rem 0; }
+
+.product-nav-container {
+  width: 1150px;
+  margin: 0 auto; }
 
 .journal-section {
   display: -webkit-box;
@@ -865,9 +879,11 @@ input[type="search"] {
       -ms-flex-pack: center;
           justify-content: center;
   width: 100vw; }
+  .product-type-blocks p {
+    line-height: 1.75; }
 
 .product-type-block-wrapper {
-  width: 22%;
+  width: 23.5%;
   border: 1px #e1e1e1 solid;
   border-top-width: 5px;
   padding: 0.75rem;
@@ -908,7 +924,8 @@ input[type="search"] {
     width: 100%;
     text-align: left;
     font-weight: bold;
-    line-height: 1.25; }
+    line-height: 1.25;
+    margin: 0; }
     .entry-header .entry-title a {
       display: inline-block;
       text-decoration: none;
@@ -1172,7 +1189,7 @@ input[type="search"] {
   padding-right: 0.5rem;
   margin-bottom: 0; }
   .archive-product-title::before {
-    content: ".........................................................";
+    content: '.........................................................';
     position: absolute;
     float: left;
     z-index: -1; }
@@ -1249,7 +1266,7 @@ input[type="search"] {
       text-decoration: none;
       color: #248a83; }
 
-.journal-posts-container {
+.journal-posts-container, .find-us-container {
   width: 760px;
   padding-top: 3rem;
   margin: 0 auto;
@@ -1301,6 +1318,212 @@ input[type="search"] {
   letter-spacing: 2; }
   .fp-adventure-title:hover {
     color: #f0e4d1; }
+
+.comments-area {
+  text-align: left; }
+
+.comment-list {
+  margin-left: 0; }
+
+.comment-content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  height: 140px; }
+  .comment-content p {
+    margin: 0; }
+
+.comment-body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 165px;
+  margin-top: 1rem;
+  margin-bottom: -1rem; }
+
+.comment-author-avatar {
+  margin-right: 1.5rem; }
+  .comment-author-avatar img {
+    border-radius: 50%;
+    height: 64px;
+    width: 64px; }
+
+.comments-title {
+  font-size: 2.1rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-bottom: 1.2rem; }
+
+.fn {
+  font-family: 'Merriweather Web', sans-serif;
+  font-style: normal;
+  font-weight: bold; }
+
+.comment-metadata {
+  color: gray; }
+  .comment-metadata a {
+    text-decoration: none;
+    color: #248a83; }
+    .comment-metadata a:hover {
+      color: #2f1339; }
+
+.reply {
+  margin-bottom: 1rem; }
+
+.comment-reply-link {
+  text-decoration: none;
+  color: #248a83; }
+  .comment-reply-link:hover {
+    color: #2f1339; }
+
+.comment-list > li {
+  border-bottom: 1px solid #e1e1e1; }
+
+.children {
+  margin-left: 4rem; }
+  .children li {
+    border-top: 1px solid #e1e1e1; }
+
+.comment-reply-title {
+  font-size: 1.8rem;
+  font-family: 'Novecento Sans Web', sans-serif;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-weight: bold; }
+
+label {
+  color: #2f1339;
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  font-family: 'Novecento Sans Web', sans-serif; }
+
+.required {
+  color: #d99054; }
+
+input[type='submit'] {
+  background: #248a83;
+  border: #248a83;
+  border-radius: 0;
+  color: white;
+  text-transform: uppercase;
+  text-shadow: none;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  font-size: 0.9rem;
+  padding: 0.75rem 1.5rem; }
+  input[type='submit']:hover {
+    background: #19625d;
+    border: #19625d;
+    text-shadow: none;
+    -webkit-box-shadow: none;
+            box-shadow: none; }
+  input[type='submit']:focus {
+    outline: none; }
+
+.comment-notes {
+  margin-top: 1.5rem;
+  width: 100%; }
+
+textarea,
+input[type='text'],
+input[type='email'],
+input[type='url'] {
+  color: #666;
+  background: #f4f4f4;
+  border: 1px solid #e1e1e1;
+  outline: none;
+  font-family: 'Merriweather Web', sans-serif;
+  width: 100%;
+  margin-top: 0.5rem; }
+
+.comment-form-cookies-consent {
+  display: none; }
+
+.comment-form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-bottom: 3rem; }
+
+.comment-form-comment {
+  margin-bottom: 3rem; }
+
+.comment-notes,
+.comment-form-comment,
+.comment-form-url,
+.submit-form {
+  width: 100%; }
+
+.comment-form-author,
+.comment-form-email {
+  width: 48%; }
+
+.about-content {
+  width: 800px;
+  margin: 0 auto;
+  margin-bottom: 5rem; }
+  .about-content h2 {
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 2.1rem;
+    margin: 1rem 0; }
+  .about-content p {
+    text-align: left; }
+
+.hero-image {
+  margin-bottom: 2.5rem; }
+
+.find-us-container {
+  text-align: left; }
+
+.find-us-title, .find-us-content h2 {
+  font-size: 2.4rem;
+  text-transform: uppercase;
+  font-family: "Novecento Sans Web", sans-serif;
+  font-weight: bold;
+  padding-bottom: 1rem; }
+
+.find-us-content h2 {
+  font-size: 2.1rem;
+  padding-top: 1rem; }
+
+.find-us-content p {
+  margin: 0; }
+
+.contact-textarea {
+  text-align: left; }
+
+.contact-submit-button {
+  margin-top: 1rem; }
+
+.your-name input[type=text],
+.your-name input[type=email],
+.your-email input[type=text],
+.your-email input[type=email],
+.your-subject input[type=text],
+.your-subject input[type=email] {
+  width: 380px;
+  height: 40px;
+  margin-bottom: 1.5rem; }
+
+.your-message textarea {
+  height: 285px; }
+
+.wpcf7-submit {
+  margin-top: 2rem;
+  margin-bottom: 8rem; }
 
 /*--------------------------------------------------------------
 # Media
