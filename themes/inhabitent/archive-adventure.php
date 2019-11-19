@@ -32,10 +32,10 @@ get_header(); ?>
 					   			<div class="adventure-image" style="background: linear-gradient(180deg,rgba(0,0,0,.4) 0,rgba(0,0,0,.4)),#969696 url(<?php echo get_the_post_thumbnail_url(); ?>); background-size: cover; background-position: center;">
 								<div class="adventure-title-info">
 									<div class="fp-adventure-title archive-adventure-title">
-						   				<?php the_title(); ?>
+									<a href="<?php echo get_post_permalink($post);?>"><?php the_title(); ?></a>
 									</div>
 									<div class="reverse-read-more">
-										<a href="">read more</a>
+										<a href="<?php echo get_post_permalink($post);?>">read more</a>
 									</div>
 								  </div>
 				  				</div>

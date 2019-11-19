@@ -12,10 +12,10 @@
 					<div class="contact-section">
 						<h4 class="footer-title">contact info</h4>
 						<span class="contact-info">
-						<i class="footer-icon fa fa-envelope"></i><p>info@inhabitent.com</p>
+						<i class="footer-icon fa fa-envelope"></i><p><a class="footer-link" href="mailto: info@inhabitent.com">info@inhabitent.com</a></p>
 							</span>
 						<span class="contact-info">
-						<i class="footer-icon fa fa-phone"></i><p>778-456-7891</p>
+						<i class="footer-icon fa fa-phone"></i><p><a class="footer-link" href="tel:">778-456-7891</a></p>
 							</span>
 						<div class=social-media-icon>
 							<i class="footer-icon fab fa-facebook-square"></i>

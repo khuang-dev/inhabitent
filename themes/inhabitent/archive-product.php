@@ -41,7 +41,8 @@ get_header(); ?>
    				<?php /* Content from your array of post results goes here */ ?>
 					   <div class="product-archive-container">
 					   			<div class="product-image">
-								<?php the_post_thumbnail(); ?>
+									   <a href="<?php echo get_post_permalink($post);?>">
+								<?php the_post_thumbnail(); ?></a>
 								</div>
 								<div class="product-info">
 								   <p class=archive-product-title><?php the_title(); ?></p>

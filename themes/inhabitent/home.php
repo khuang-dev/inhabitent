@@ -23,7 +23,7 @@ get_header(); ?>
 
 				<?php get_template_part( 'template-parts/content' ); ?>
 				<div class="read-more">
-				<a href="">read more →</a>
+				<a href="<?php echo get_post_permalink($post);?>">read more →</a>
 			</div>
 			<?php endwhile; ?>
 

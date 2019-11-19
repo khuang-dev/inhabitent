@@ -6,24 +6,6 @@
  */
 
 
-// Fixed header
-
-window.onscroll = function() {myFunction()};
-
-// Get the header
-let banner = document.getElementById("banner-image");
-let fixedheader = document.getElementById("fixed-header");
-let header = document.getElementById("header-container")
-
-// Get the offset position of the navbar
-let sticky = banner.offsetTop;
-
-// Add the sticky class to the header when you reach its scroll position. Remove "sticky" when you leave the scroll position
-function myFunction() {
-  if (window.pageYOffset > sticky) {
-    header.classList.add("fixed-header");
-  } 
-}
 
 (function() {
   let container, button, menu, links, i, len;

@@ -20,7 +20,12 @@
 		<div id="page" class="hfeed site">
 			<a class="skip-link screen-reader-text" href="#content"><?php echo esc_html( 'Skip to content' ); ?></a>
 
-			<header id="masthead" class="site-header" role="banner">
+			<header id="masthead" class="site-header <?php
+				$pagename = get_query_var('pagename');
+			    if (!is_front_page() && $pagename !== 'about') {
+					echo 'simple-header';
+				};
+			  ?>" role="banner">
 				<div id="header-container" class=header-container>
 					<div class="header-logo">
 					<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
