@@ -685,6 +685,15 @@ a {
   position: fixed;
   background-color: rgba(255, 255, 255, 0.8);
   border-bottom: 1px solid #e1e1e1; }
+  .fixed-header input[type='search']::-webkit-input-placeholder, .simple-header input[type='search']::-webkit-input-placeholder {
+    color: #666;
+    caret-color: #2f1339; }
+  .fixed-header input[type='search']::-ms-input-placeholder, .simple-header input[type='search']::-ms-input-placeholder {
+    color: #666;
+    caret-color: #2f1339; }
+  .fixed-header input[type='search']::placeholder, .simple-header input[type='search']::placeholder {
+    color: #666;
+    caret-color: #2f1339; }
   .fixed-header .fa, .simple-header .fa {
     color: #248a83 !important;
     text-shadow: none !important; }
@@ -733,6 +742,12 @@ a {
 .full-logo {
   -webkit-transform: translateY(75%);
           transform: translateY(75%); }
+
+.nav-menu {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-right: 11vw; }
 
 .fp-title {
   font-size: 2.4rem;
@@ -853,34 +868,27 @@ a {
   top: 0;
   left: 0; }
 
-.nav-menu {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  margin-right: 11vw; }
-
-/*Search*/
 input[type="search"] {
   border: none;
   outline: none;
-  caret-color: #2f1339; }
+  caret-color: white; }
 
 .search-field {
   background: none;
   width: 180px;
   display: none; }
   .search-field::-webkit-input-placeholder {
-    color: #666;
+    color: white;
     font-size: 1rem;
     font-family: 'Novecento Sans Web', sans-serif;
     text-transform: uppercase; }
   .search-field::-ms-input-placeholder {
-    color: #666;
+    color: white;
     font-size: 1rem;
     font-family: 'Novecento Sans Web', sans-serif;
     text-transform: uppercase; }
   .search-field::placeholder {
-    color: #666;
+    color: white;
     font-size: 1rem;
     font-family: 'Novecento Sans Web', sans-serif;
     text-transform: uppercase; }
@@ -1657,6 +1665,7 @@ figure {
     border: 1px solid #e1e1e1;
     background: #f4f4f4;
     padding: 0.5rem 1rem 0.5rem 0.25rem;
+    caret-color: white;
     text-align: left; }
   .search-404 input[type='search']::-ms-input-placeholder {
     text-transform: none;
@@ -1665,6 +1674,7 @@ figure {
     border: 1px solid #e1e1e1;
     background: #f4f4f4;
     padding: 0.5rem 1rem 0.5rem 0.25rem;
+    caret-color: white;
     text-align: left; }
   .search-404 input[type='search']::placeholder {
     text-transform: none;
@@ -1673,6 +1683,7 @@ figure {
     border: 1px solid #e1e1e1;
     background: #f4f4f4;
     padding: 0.5rem 1rem 0.5rem 0.25rem;
+    caret-color: white;
     text-align: left; }
 
 .post-adventure-title {
